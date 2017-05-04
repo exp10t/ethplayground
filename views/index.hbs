@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> {{title}} </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8"
+            src="http://cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="javascripts/events.js"></script>
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <form action="">
+                <label for="usr">Search:</label>
+                <input type="text" class="form-control" id="usr"
+                       placeholder="Enter address or transaction or block number or block hash">
+            </form>
+        </div>
+    </div>
+
+    <div class="container" id="coverpage">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <table id="tableblock" class="display" width="100%" style="background-color:#BCD4E6">
+                    <caption><h3>Latest Blocks</h3></caption>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <table id="tabletxs" class="display" width="100%" style="background-color:#BCD4E6">
+                    <caption><h3>Latest Transactions</h3></caption>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="searchpage">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <table id="tableblock2" class="display" width="100%" style="background-color:#BCD4E6">
+                <caption><h4 id="idthead"></h4></caption>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="row" id="goksu">
+    <input type="text" id="foksu" name="datasucan" title="test" readonly>
+</div>
+
+
+</body>
+</html>
