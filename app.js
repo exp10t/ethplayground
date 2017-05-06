@@ -14,11 +14,20 @@ web3 = new Web3();
 //Web3 connection
 web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545'));
 
-if (!web3.isConnected()) {
+if(!web3.isConnected()) {
     console.log("web3 not connected");
 }
-else
+else {
     console.log("web3 connected");
+}
+
+//Neo4j connection
+
+var neo4j = require('neo4j');
+//var username = process.env.NEO4J_USERNAME;
+//var password = process.env.NEO4J_PASSWORD;
+//var db = new neo4j.GraphDatabase('http://' + username + ':' + password + '@localhost:7474');
+var db = new neo4j.GraphDatabase('http://testuser:test@localhost:7474');
 
 var app = express();
 
