@@ -1,11 +1,9 @@
 $(document).ready(function () {
     setInterval(function () {
-        $.get("testfunc", function (result) {
-            $('#foksu').val(result.message);
+        $.get("latestblock", function (result) {
+            $('#latestblocknumber').val(result.message);
         })
     }, 1000);
-
-
 });
 
 

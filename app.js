@@ -6,14 +6,15 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
 
+//Web3 Initialization
 var Web3 = require('web3');
-global.web3 = new Web3();
+web3 = new Web3();
 
-global.web3.setProvider(new global.web3.providers.HttpProvider('http://localhost:8545'));
+//Web3 connection
+web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545'));
 
-if (!global.web3.isConnected()) {
+if (!web3.isConnected()) {
     console.log("web3 not connected");
 }
 else
@@ -25,7 +26,6 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-// uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -34,7 +34,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -54,4 +53,5 @@ app.use(function (err, req, res) {
     res.render('error');
 });
 
-module.exports = app;
+module.exports.app = app;
+module.exports.web3 = web3;

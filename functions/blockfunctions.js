@@ -4,7 +4,7 @@
 var app = require('../app');
 
 var functions = {
-    getBlockNumber: function (req, res) {
+    getLatestBlockNumber: function (req, res) {
         res.json({message: app.web3.eth.blockNumber});
     }
 };
